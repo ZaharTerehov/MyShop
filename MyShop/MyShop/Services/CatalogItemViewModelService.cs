@@ -1,6 +1,7 @@
 ﻿using MyShop.Interfaces;
 using MyShop.Models;
 using MyShop.Models.ViewModel;
+using NuGet.Protocol.Core.Types;
 
 namespace MyShop.Services
 {
@@ -8,10 +9,11 @@ namespace MyShop.Services
     {
         private readonly IRepository<CatalogItem> _catalogItemRepositiry;
         
-        public CatalogItemViewModelService()
+        public CatalogItemViewModelService(IRepository<CatalogItem> catalogItemRepositiry)
         {
-            _catalogItemRepositiry = new LocalCatalogItemRepository();
+            _catalogItemRepositiry = catalogItemRepositiry;
         }
+
         public void UpdateCatalogItem(CatalogItemViewModel viewModel)
         {
             var existingCatalogItem = _catalogItemRepositiry.GetById(viewModel.Id);

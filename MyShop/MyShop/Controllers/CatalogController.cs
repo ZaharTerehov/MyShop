@@ -12,10 +12,11 @@ namespace MyShop.Controllers
 
         private readonly IRepository<CatalogItem> _catalogRepository;
 
-        public CatalogController()
+        public CatalogController(IRepository<CatalogItem> catalogRepository, 
+            ICatalogItemViewModelService catalogItemViewModelService)
         {
-            _catalogItemViewModelService = new CatalogItemViewModelService();
-            _catalogRepository = new LocalCatalogItemRepository();
+            _catalogItemViewModelService = catalogItemViewModelService;
+            _catalogRepository = catalogRepository;
         }
 
         public IActionResult Index()
