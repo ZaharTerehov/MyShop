@@ -2,7 +2,7 @@
 {
     public sealed class CatalogItem
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -16,9 +16,9 @@
 
         public CatalogBrand CatalogBrand { get; set; }
 
-        public CatalogItem(Guid id, string name, string description, decimal price, string pictureUrl)
+        public CatalogItem(int id, string name, string description, decimal price, string pictureUrl)
         {
-            id = Guid.NewGuid();
+            id = int.Newint();
             Name = name;
             //Description = description;
             Price = price;

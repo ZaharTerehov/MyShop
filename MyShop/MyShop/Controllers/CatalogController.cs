@@ -31,7 +31,7 @@ namespace MyShop.Controllers
                 return View(catalogItemsViewModel);
         }
 
-        public IActionResult Details(Guid id)
+        public IActionResult Details(int id)
         {
             var item = _catalogRepository.GetById(id);
 
@@ -49,7 +49,7 @@ namespace MyShop.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(Guid id)
+        public IActionResult Edit(int id)
         {
             var item = _catalogRepository.GetById(id);
 
