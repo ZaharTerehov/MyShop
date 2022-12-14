@@ -18,7 +18,7 @@
 
         public CatalogItem(int id, string name, string description, decimal price, string pictureUrl)
         {
-            id = int.Newint();
+            id = id;
             Name = name;
             //Description = description;
             Price = price;
